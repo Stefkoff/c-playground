@@ -58,7 +58,6 @@ char *strToLowerCopy(const char *str) {
     memset(result, 0, size);
 
     while (index < size) {
-        char c = toLower(str[index]);
         result[index] = toLower(str[index]);
         index++;
     }
