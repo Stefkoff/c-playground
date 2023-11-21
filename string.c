@@ -4,13 +4,9 @@
 #include <string.h>
 
 char toLower(char c);
-
 char toUpper(char c);
 
 char *strToLowerCopy(const char *);
-
-void strToLower(char *);
-
 char *strToUpperCopy(const char *);
 
 void strToUpper(char *);
