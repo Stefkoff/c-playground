@@ -5,8 +5,8 @@
 
 char toLower(char c);
 char toUpper(char c);
-char* strToLower(const char*, uint8_t);
-char* strToUpper(const char*, uint8_t);
+char* strToLower(const char*);
+char* strToUpper(const char*);
 
 int main() {
   char c = 'C';
@@ -15,9 +15,9 @@ int main() {
   printf("%c to upper case = %c\n", cLower, toUpper(cLower));
 
   const char* str = "Hello World";
-  const char* strLower = strToLower(str, 11);
+  const char* strLower = strToLower(str);
   printf("%s to lower = %s\n", str,strLower); 
-  const char* strUpper = strToUpper(strLower, 11);
+  const char* strUpper = strToUpper(strLower);
   printf("%s to upper = %s\n", strLower, strUpper);
 
   return 0;
@@ -39,8 +39,9 @@ char toUpper(char c) {
   return c & (~(1 << 5));
 }
 
- char* strToLower(const char* str, uint8_t size) {
+ char* strToLower(const char* str) {
   uint8_t index = 0;
+  uint8_t size = strlen(str);
   char* result = (char *) malloc(size);
   memset(result, 0, size);
 
@@ -54,8 +55,9 @@ char toUpper(char c) {
 }
 
 
-char* strToUpper(const char* str, uint8_t size) {
+char* strToUpper(const char* str) {
   uint8_t index = 0;
+  uint8_t size = strlen(str);
   char* result = (char *) malloc(size);
   memset(result, 0, size);
 
